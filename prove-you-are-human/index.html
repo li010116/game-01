@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#1E2025" />
+  <title>绝对证明你是人类（2026地狱验证）· bCAPTCHA</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body data-skin="gadget" data-mood="normal" data-heat="0">
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <div class="app-shell" id="appShell">
+
+    <!-- 4-Theme Live Switcher Bar -->
+    <nav class="skin-bar" id="skinBar" aria-label="界面风格切换">
+      <button type="button" class="skin-btn active" data-skin="gadget">📟 掌机</button>
+      <button type="button" class="skin-btn" data-skin="cyber">⚡ 赛博</button>
+      <button type="button" class="skin-btn" data-skin="pop">💥 漫画</button>
+      <button type="button" class="skin-btn" data-skin="editorial">◻️ 极简</button>
+    </nav>
+
+    <!-- Compact Telemetry HUD -->
+    <header class="hud" id="hud">
+      <div class="hud-track">
+        <div class="hud-metric">
+          <span class="hud-k">STAGE</span>
+          <span class="hud-v hud-lv tabular" id="hudLevel">01/20</span>
+        </div>
+        <span class="hud-sep" aria-hidden="true"></span>
+        <div class="hud-metric">
+          <span class="hud-k">TIME</span>
+          <span class="hud-v tabular" id="hudTimer">00:00.00</span>
+        </div>
+        <span class="hud-sep" aria-hidden="true"></span>
+        <div class="hud-metric hud-sus-wrap" id="hudSusWrap" title="硅基浓度">
+          <span class="hud-k">硅基</span>
+          <div class="hud-sus-row">
+            <span class="hud-v hud-sus tabular" id="hudSus">0%</span>
+            <span class="sus-mini-bar"><i id="hudSusFill" style="width:0%"></i></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hud-actions">
+        <button class="hud-icon-btn" id="btnRank" type="button" aria-label="查看周榜" title="查看周榜">🏆</button>
+        <button class="hud-icon-btn" id="btnMute" type="button" aria-label="音效开关" title="音效开关">🔊</button>
+      </div>
+    </header>
+
+    <!-- Main Game Chassis / Card -->
+    <main class="card" id="gameCard">
+      <!-- Hardware Gadget Top Accent (Visible in Gadget skin) -->
+      <div class="gadget-top-deck" aria-hidden="true">
+        <div class="gadget-deck-left">
+          <span class="gadget-led"></span>
+          <span class="gadget-serial">bC-2026 // HUMANITY DETECTOR</span>
+        </div>
+        <div class="gadget-speaker">
+          <i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+      </div>
+
+      <!-- 20-Segment Live Progress Strip -->
+      <div class="progress-strip" id="progressStrip" aria-hidden="true"></div>
+
+      <!-- Card Header -->
+      <div class="card-header" id="cardHeader">
+        <div class="brand-group">
+          <div class="brand-shield" id="brandShield" aria-hidden="true">
+            <svg class="shield-svg" width="38" height="38" viewBox="0 0 38 38">
+              <circle class="shield-orbit" cx="19" cy="19" r="16.5" fill="none" stroke="currentColor" stroke-opacity="0.38" stroke-width="1.6" stroke-dasharray="6 4"/>
+              <path d="M19 5.5 L30 9.8 V18.5 C30 25.4 25.3 30.8 19 33 C12.7 30.8 8 25.4 8 18.5 V9.8 Z"
+                    fill="currentColor" stroke="#141418" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M14.2 19.2 L17.6 22.6 L24.2 15.6" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="shield-dot" id="shieldDot"></span>
+          </div>
+          <div class="brand-meta">
+            <div class="brand-org" id="brandOrg">全网人机安全验证中心 · bCAPTCHA</div>
+            <h1 class="level-title" id="levelTitle">基础人机身份验证</h1>
+          </div>
+        </div>
+        <span class="version-chip" id="versionChip">v2026.11</span>
+      </div>
+
+      <!-- Mission Prompt Banner -->
+      <div class="level-prompt-wrap">
+        <span class="prompt-tag" id="promptTag">任务</span>
+        <div class="level-prompt" id="levelPrompt">请勾选下方复选框，证明您不是爬虫或大模型</div>
+      </div>
+
+      <!-- Interactive Stage (Bezel-framed in Gadget, Neon Chamber in Cyber, Comic Panel in Pop, Gallery in Editorial) -->
+      <div class="stage-bezel">
+        <section class="stage" id="stage" aria-live="polite"></section>
+      </div>
+
+      <!-- Security Guard Mascot Roast Bar -->
+      <div class="roast-bar" id="roastBar" data-mood="info">
+        <div class="guard-avatar" id="roastIcon" aria-hidden="true"></div>
+        <div class="roast-bubble">
+          <span class="roast-speaker" id="roastSpeaker">bCAPTCHA 保安</span>
+          <span class="roast-text" id="roastText">请配合完成安全核验，全程绝对不烧心。</span>
+        </div>
+      </div>
+
+      <!-- Card Footer -->
+      <footer class="card-footer" id="cardFooter">
+        <div class="footer-left">
+          <button class="skip-btn hidden" id="btnSkip" type="button">
+            🤖 承认我是人机 (+30s)
+          </button>
+          <span class="encrypt-note" id="encryptNote">
+            <span class="live-dot"></span> 256位碳基安全加密
+          </span>
+        </div>
+        <span class="footer-links">隐私 · 条款 · 绝不烧心</span>
+      </footer>
+
+      <!-- Pass Flash Badge -->
+      <div class="pass-flash hidden" id="passFlash">
+        <div class="pass-flash-inner">
+          <span class="pass-check">✓</span>
+          <span class="pass-flash-msg" id="passFlashMsg">人类行为已确认</span>
+        </div>
+      </div>
+    </main>
+
+    <!-- Chapter Interlude Overlay -->
+    <div class="overlay hidden" id="chapterOverlay">
+      <div class="chapter-card">
+        <div class="chapter-tag" id="chapterTag">CHAPTER 02</div>
+        <h2 class="chapter-name" id="chapterName">物理失控与感官整活</h2>
+        <p class="chapter-desc" id="chapterDesc">前面的热身结束了，接下来保安要动真格了。</p>
+        <div class="chapter-hint">点击任意处继续 →</div>
+      </div>
+    </div>
+
+    <!-- Result / Certificate Screen -->
+    <section class="result-screen hidden" id="resultScreen">
+      <div class="result-card">
+        <div class="result-head">
+          <div class="result-eyebrow">VERIFICATION COMPLETE</div>
+          <h2>🎉 20 关地狱验证全部通过！</h2>
+          <p class="result-sub" id="resultSub">你的《2026 碳基纯度鉴定证书》已签发</p>
+        </div>
+
+        <div class="cert-wrap">
+          <div class="cert-frame">
+            <img id="certImage" class="cert-img" alt="2026 碳基纯度鉴定证书" />
+          </div>
+          <div class="cert-tip">📱 手机端长按证书直接保存，发评论区晒纯度</div>
+        </div>
+
+        <div class="name-row">
+          <label for="playerNameInput">署名</label>
+          <input id="playerNameInput" type="text" maxlength="14" placeholder="输入B站昵称重新盖章" />
+          <button id="btnRenameCert" class="btn-mini" type="button">重新盖章</button>
+        </div>
+
+        <div class="result-actions">
+          <button class="btn-primary" id="btnCopyShare" type="button">📋 一键复制评论区晒分文案</button>
+          <div class="result-actions-row">
+            <button class="btn-secondary" id="btnDownloadCert" type="button">💾 下载高清证书</button>
+            <button class="btn-secondary" id="btnResultRank" type="button">🏆 全站速通周榜</button>
+          </div>
+          <div class="result-actions-row">
+            <button class="btn-outline" id="btnReplay" type="button">🔄 不服再刷一次</button>
+            <button class="btn-pink" id="btnFastReplay" type="button">⚡ 速通极简模式</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leaderboard Modal -->
+    <div class="modal-backdrop hidden" id="rankModal">
+      <div class="modal-panel">
+        <div class="modal-head">
+          <div class="modal-title-group">
+            <h3>🏆 纯血人类速通周榜</h3>
+            <span class="modal-sub">按有效耗时排序 · 同分先到先赢</span>
+          </div>
+          <button class="modal-close" id="btnCloseRank" type="button" aria-label="关闭">✕</button>
+        </div>
+        <div class="rank-meta-bar">
+          <span id="rankSourceNote">全站周榜 · 实时同步</span>
+          <button class="btn-mini" id="btnRefreshRank" type="button">↻ 刷新</button>
+        </div>
+        <div class="rank-status hidden" id="rankStatus"></div>
+        <div class="rank-list" id="rankList"></div>
+        <div class="rank-my-bar" id="rankMyBar"></div>
+      </div>
+    </div>
+
+    <!-- Collapsible Debug Toolbar -->
+    <aside class="debug-bar hidden" id="debugBar">
+      <button class="dbg-toggle" id="dbgToggle" type="button">🛠️ DBG</button>
+      <div class="dbg-controls" id="dbgControls">
+        <button class="dbg-btn" id="dbgPrev" type="button">⏮</button>
+        <select class="dbg-select" id="dbgSelect" aria-label="选择关卡"></select>
+        <button class="dbg-btn" id="dbgNext" type="button">⏭</button>
+        <button class="dbg-btn" id="dbgCert" type="button">📄 证书</button>
+        <button class="dbg-btn" id="dbg307" type="button">307044</button>
+      </div>
+    </aside>
+
+    <!-- Floating Toast -->
+    <div class="toast hidden" id="toast"></div>
+  </div>
+
+  <!-- Confetti Layer -->
+  <canvas id="confettiCanvas" class="confetti-canvas hidden"></canvas>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

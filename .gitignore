@@ -1,0 +1,8 @@
+# OS & Editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Dependencies & Build Cache
+node_modules/
+*/dist/
